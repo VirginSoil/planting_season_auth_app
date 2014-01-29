@@ -7,6 +7,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'haml'
 gem 'bcrypt-ruby'
+gem 'travis'
 
 
 gem 'turbolinks'
