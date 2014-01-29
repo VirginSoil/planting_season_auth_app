@@ -14,7 +14,10 @@ feature "User" do
       fill_in "Password Confirmation", with: "asdf"
       click_on "Create Account"
     end
-    expect(page.content).to include "Thanks, Tyler Long, for Signing Up!"
+
+    within ".flash" do
+      expect(page).to have_content "Thanks, Tyler Long, for Signing Up!"
+    end
   end
 end
 
