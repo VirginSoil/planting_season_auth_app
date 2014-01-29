@@ -22,4 +22,25 @@ feature "User" do
     end
   end
 
+  scenario "can't login with incorrect password" do
+    create(:user, 
+           :email => "thewatts@thewatts.com",
+           :password => "asdf",
+           :password_confirmation => "asdf")
+    visit root_url
+    click_on "Login"
+    expect(current_path).to eq login_path
+
+    within ".login" do
+      fill_in "Email Address", with: "thewatts@thewatts.com"
+      fill_in "Password", with: "incorrect-password"
+      click_on "Login"
+    end
+
+    within ".flash" do
+      expect(page).to have_content "Email or Password Incorrect"
+    end
+  end
+
+
 end

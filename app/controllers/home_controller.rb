@@ -14,7 +14,7 @@ class HomeController < ApplicationController
       redirect_to gardens_path
     else
       flash[:error] = "Email or Password Incorrect"
-      redirect :back
+      redirect_to :back
     end
   end
 end
