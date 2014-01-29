@@ -3,17 +3,17 @@ require 'spec_helper'
 feature "User" do
 
   scenario "logs into their account" do
-    create(:user, 
+    create(:user,
            :email => "thewatts@thewatts.com",
-           :password => "asdf",
-           :password_confirmation => "asdf")
+           :password => "password",
+           :password_confirmation => "password")
     visit root_url
     click_on "Login"
     expect(current_path).to eq login_path
 
     within ".login" do
       fill_in "Email Address", with: "thewatts@thewatts.com"
-      fill_in "Password", with: "asdf"
+      fill_in "Password", with: "password"
       click_on "Login"
     end
 
@@ -23,10 +23,10 @@ feature "User" do
   end
 
   scenario "can't login with incorrect password" do
-    create(:user, 
+    create(:user,
            :email => "thewatts@thewatts.com",
-           :password => "asdf",
-           :password_confirmation => "asdf")
+           :password => "password",
+           :password_confirmation => "password")
     visit root_url
     click_on "Login"
     expect(current_path).to eq login_path

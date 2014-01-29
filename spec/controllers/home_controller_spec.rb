@@ -21,7 +21,7 @@ describe HomeController do
     it "should login a user with correct credentials" do 
       create(:user)
       post :login, { :user => { :email => "tyler.stephen.long@gmail.com",
-                                :password => "asdf" } }
+                                :password => "password" } }
 
       expect(flash[:success]).not_to be_nil
       expect(response).to be_redirect
