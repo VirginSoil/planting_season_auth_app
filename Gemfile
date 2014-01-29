@@ -8,8 +8,6 @@ gem 'jquery-rails'
 gem 'haml'
 gem 'bcrypt-ruby'
 gem 'travis'
-
-
 gem 'turbolinks'
 
 gem 'jbuilder', '~> 1.2'
