@@ -8,8 +8,8 @@ describe UsersController do
           :full_name => "Tyler Long",
           :email => "tyler.stephen.long@gmail.com",
           :phone => "3035551212",
-          :password => "asdf",
-          :password_confirmation => "asdf"
+          :password => "password",
+          :password_confirmation => "password"
         }
       }
       expect {
