@@ -15,9 +15,7 @@ feature "User" do
       click_on "Create Account"
     end
 
-    within ".flash" do
-      expect(page).to have_content "Thanks, Tyler Long, for Signing Up!"
-    end
+    expect(page).to have_redirect
   end
 end
 
