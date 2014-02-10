@@ -3,8 +3,6 @@ require 'spec_helper'
 feature "User" do
   scenario "visits sign up page and creates an account" do
     visit root_path
-    click_on "Sign Up"
-    expect(current_path).to eq signup_path
 
     within ".signup" do
       fill_in "Full Name", with: "Tyler Long"

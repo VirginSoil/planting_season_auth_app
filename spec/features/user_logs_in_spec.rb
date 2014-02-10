@@ -8,8 +8,6 @@ feature "User" do
            :password => "password",
            :password_confirmation => "password")
     visit root_url
-    click_on "Login"
-    expect(current_path).to eq login_path
 
     within ".login" do
       fill_in "Email Address", with: "thewatts@thewatts.com"
@@ -28,8 +26,6 @@ feature "User" do
            :password => "password",
            :password_confirmation => "password")
     visit root_url
-    click_on "Login"
-    expect(current_path).to eq login_path
 
     within ".login" do
       fill_in "Email Address", with: "thewatts@thewatts.com"
