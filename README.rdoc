@@ -1,3 +1,3 @@
 This is where one would go if he or she wanted access to the Planting Season app.
 
-URL: http://planting-season-auth.herokuapp.com
+URL: http://planting-season-auth.herokuapp.com!
