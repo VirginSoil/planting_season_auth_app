@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Thanks, #{@user.full_name}, for Signing Up!"
-      redirect_to gardens_path
+      redirect_to '/dashboard/welcome/new'
     else
       flash.notice = "There was an error with your
         information. Please ensure all of the required fields are filled out."
