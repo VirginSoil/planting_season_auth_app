@@ -8,13 +8,37 @@
 </head>
 <body>
 
-<% flash.each do |type, message| %>
-  <div class="flash #{type}">
-    <%= message %>
-  </div>
-<% end %>
+<div class="wrapper header">
+  <header class="main row">
+    <div class="four columns">
+       <h1 class="logo">
+         <a href="/">Planting Season</a>
+       </h1>
+    </div>
+    <div class="eight columns">
+      <nav class="header-nav">
+        <ul>
+          <li>
+            <a href="/auth/login">
+              Login
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>
 
-<%= yield %>
+<div class="body-content row full">
+  <% flash.each do |type, message| %>
+    <div class="flash #{type} twelve columns">
+      <%= message %>
+    </div>
+  <% end %>
+
+  <%= yield %>
+
+</div>
 
 </body>
 </html>
