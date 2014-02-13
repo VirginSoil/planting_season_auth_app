@@ -12,6 +12,7 @@ class HomeController < ApplicationController
     if user && user.authenticate(params[:user][:password])
       cookies[:flash] = "Welcome back, #{user.full_name}!"
       cookies[:user_id] = user.id
+      cookies[:username] = user.full_name
       redirect_to '/dashboard'
     else
       flash[:error] = "Email or Password Incorrect"

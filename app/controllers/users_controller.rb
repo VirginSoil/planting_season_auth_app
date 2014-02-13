@@ -4,7 +4,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       cookies[:user_id] = @user.id
-      flash[:success] = "Thanks, #{@user.full_name}, for Signing Up!"
+      cookies[:username] = @user.full_name
+      cookies[:flash] = "Thanks, #{@user.full_name}, for Signing Up!"
       redirect_to '/dashboard/welcome/new'
     else
       flash.notice = "There was an error with your
