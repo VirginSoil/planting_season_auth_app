@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      cookies[:user_id] = user.id
       flash[:success] = "Thanks, #{@user.full_name}, for Signing Up!"
       redirect_to '/dashboard/welcome/new'
     else
